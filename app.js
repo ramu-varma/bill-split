@@ -9,7 +9,9 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
-
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to Bill Split Backend API' });
+  });
 // Routes
 app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/groups', require('./routes/groupRoutes'));
